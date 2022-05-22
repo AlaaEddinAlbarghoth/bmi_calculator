@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'custom_widgets/reusable_card.dart';
 
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
@@ -12,12 +13,50 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BMI Calculator'),
+        title: const Center(child: Text('BMI Calculator')),
       ),
-      body: const Center(child: Text('Body Text')),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (() {}),
-        child: const Icon(Icons.add),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: ReusableCard(
+                      colour: Color(0xFF1D1E33),
+                    ),
+                  ),
+                  Expanded(
+                    child: ReusableCard(
+                      colour: Color(0xFF1D1E33),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: ReusableCard(
+                colour: Color(0xFF1D1E33),
+              ),
+            ),
+            Expanded(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: ReusableCard(
+                      colour: Color(0xFF1D1E33),
+                    ),
+                  ),
+                  Expanded(
+                    child: ReusableCard(
+                      colour: Color(0xFF1D1E33),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
